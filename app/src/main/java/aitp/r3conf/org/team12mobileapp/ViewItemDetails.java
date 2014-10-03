@@ -2,10 +2,11 @@ package aitp.r3conf.org.team12mobileapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class ViewItemDetails extends Activity {
@@ -37,11 +38,17 @@ public class ViewItemDetails extends Activity {
     }
 
     public void showItemDetail(int id){
-        DataBasehelper dbHelper = new DataBaseHelper(this);
-        dbHelper.open();
+        DataBaseHelper dbHelper = new DataBaseHelper(this);
+        try {
+            dbHelper.onOpen(dbHelper.DB_NAME);
+        } catch (SQLException e) {
+            Log.v("TEST","Could Not Open Database");
+        }
 
         String query = "SELECT * FROM item WHERE id = " + id;
-        ResultSet resultSet = dbhelper.execute(query);
-        resultSet.getRow();
+        dbHelper.getReadableDatabase();
+
+
     }
+
 }

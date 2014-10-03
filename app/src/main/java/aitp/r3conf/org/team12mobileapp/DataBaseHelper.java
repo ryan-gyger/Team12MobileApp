@@ -1,3 +1,5 @@
+package aitp.r3conf.org.team12mobileapp;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -12,9 +14,9 @@ import java.sql.SQLException;
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     //The Android's default system path of your application database.
-    private static String DB_PATH = "/data/data/team12mobileapp/databases/";
+    private static String DB_PATH = "/data/data/aitp.r3conf.org.team12mobileapp/databases/";
 
-    private static String DB_NAME = "main`";
+    private static String DB_NAME = "Team12ShoppingDB.sqlite";
 
     private SQLiteDatabase myDataBase;
 
@@ -116,11 +118,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void openDataBase() throws SQLException{
+    public SQLiteDatabase openDataBase() throws SQLException{
 
         //Open the database
         String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        return SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
     }
 
