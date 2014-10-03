@@ -5,10 +5,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.GridLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.view.ViewGroup.LayoutParams;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -23,16 +28,23 @@ public class ViewItemList extends Activity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(ViewCategories.EXTRA_MESSAGE);
-        TextView category = (TextView)findViewById(R.id.category);
-        category.setText(message);
 
         DataAdapter myDbHelper = new DataAdapter(this);
         myDbHelper.createDatabase();
         myDbHelper.open();
-        ArrayList<Item> dbValues = myDbHelper.getAllByCategory((String) category.getText());
+        ArrayList<Item> dbValues = myDbHelper.getAllByCategory(message);
         myDbHelper.close();
 
-        category.setText((CharSequence) dbValues.get(0).name);
+        TextView [] txt =new TextView[10];
+        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.info);
+        for(int i=0;i<dbValues.size();i++)
+        {
+            txt[i]=new TextView(ViewItemList.this);
+            txt[i].setText(dbValues.get(i).name);
+            txt[i].setLayoutParams(new
+                    LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+            linearLayout.addView(txt[i]);
+        }
     }
 
 
