@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                Intent intent = new Intent(MainActivity.class, ViewCategories.class);
+                Intent intent = new Intent(MainActivity.this, ViewCategories.class);
                 startActivity(intent);
             }
         }, 2000);
