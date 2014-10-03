@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.sql.ResultSet;
+
 
 public class ViewItemDetails extends Activity {
 
@@ -32,5 +34,14 @@ public class ViewItemDetails extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showItemDetail(int id){
+        DataBasehelper dbHelper = new DataBaseHelper(this);
+        dbHelper.open();
+
+        String query = "SELECT * FROM item WHERE id = " + id;
+        ResultSet resultSet = dbhelper.execute(query);
+        resultSet.getRow();
     }
 }
