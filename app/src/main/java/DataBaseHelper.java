@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.sql.SQLException;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -41,7 +42,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             //do nothing - database already exist
         }else{
 
-            //By calling this method and empty database will be created into the default system path
+            //By calling this method an empty database will be created into the default system path
             //of your application so we are gonna be able to overwrite that database with our database.
             this.getReadableDatabase();
 
