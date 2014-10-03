@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class ViewItemList extends Activity {
@@ -25,21 +26,13 @@ public class ViewItemList extends Activity {
         TextView category = (TextView)findViewById(R.id.category);
         category.setText(message);
 
-        DataBaseHelper dbhelper = new DataBaseHelper(this);
-        try {
-            SQLiteDatabase db = dbhelper.openDataBase();
+        DataAdapter myDbHelper = new DataAdapter(this);
+        myDbHelper.createDatabase();
+        myDbHelper.open();
+        ArrayList<Item> dbValues = myDbHelper.getAllByCategory((String) category.getText());
+        myDbHelper.close();
 
-            Cursor cursor = db.query("item", new String[] { "id", "category" }, "category" + "=?",
-                    new String[] { message }, null, null, null, null);
-            if (cursor != null)
-                cursor.moveToFirst();
-                category.setText(cursor.getString(1));
-
-        } catch (SQLException e) {
-            //stuff
-        } catch (NullPointerException e) {
-            // stuff
-        }
+        category.setText((CharSequence) dbValues.get(0).name);
     }
 
 
