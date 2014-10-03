@@ -33,4 +33,12 @@ public class ViewItemDetails extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void showItemDetail(int id){
+        DataBaseHelper dbHelper = new DataBaseHelper(this);
+
+
+
+    }
+
 }

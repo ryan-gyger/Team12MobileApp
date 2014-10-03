@@ -8,10 +8,7 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.ViewGroup.LayoutParams;
 
@@ -42,7 +39,7 @@ public class ViewItemList extends Activity {
             txt[i]=new TextView(ViewItemList.this);
             txt[i].setText(dbValues.get(i).name);
             txt[i].setLayoutParams(new
-                    LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+                    LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
             linearLayout.addView(txt[i]);
         }
     }
