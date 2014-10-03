@@ -1,10 +1,12 @@
 package aitp.r3conf.org.team12mobileapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.os.Handler;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
@@ -12,6 +14,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Intent intent = new Intent(MainActivity.class, ViewCategories.class);
+                startActivity(intent);
+            }
+        }, 2000);
     }
 
 
