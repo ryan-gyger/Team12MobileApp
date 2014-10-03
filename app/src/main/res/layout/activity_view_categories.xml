@@ -8,9 +8,37 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="aitp.r3conf.org.team12mobileapp.ViewCategories">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/hats"
+        android:id="@+id/hats"
+        android:onClick="sendCategory"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/lanyards"
+        android:layout_below="@id/hats"
+        android:id="@+id/lanyards"
+        android:onClick="sendCategory"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/pens"
+        android:layout_below="@id/lanyards"
+        android:id="@+id/pens"
+        android:onClick="sendCategory"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/shirts"
+        android:layout_below="@id/pens"
+        android:id="@+id/shirts"
+        android:onClick="sendCategory"/>
+
 
 </RelativeLayout>

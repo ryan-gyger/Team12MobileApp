@@ -1,12 +1,16 @@
 package aitp.r3conf.org.team12mobileapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class ViewCategories extends Activity {
+    public final static String EXTRA_MESSAGE = "com.example.team12mobileapp.CATEGORY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +36,27 @@ public class ViewCategories extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void sendCategory(View view) {
+        int id = view.getId();
+        String message = "";
+        switch (id){
+            case R.id.hats:
+                message = "Hats";
+                break;
+            case R.id.lanyards:
+                message = "Lanyards";
+                break;
+            case R.id.pens:
+                message = "Pens";
+                break;
+            case R.id.shirts:
+                message = "Shirts";
+                break;
+        }
+        Intent intent = new Intent(this, ViewItemList.class);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }

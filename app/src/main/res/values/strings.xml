@@ -12,5 +12,9 @@
     <string name="title_activity_display_cart">Display Cart</string>
     <string name="title_activity_checkout">Checkout</string>
     <string name="title_activity_locate_store">Store Locator</string>
+    <string name="hats">Hats</string>
+    <string name="lanyards">Lanyards</string>
+    <string name="pens">Pens</string>
+    <string name="shirts">Shrits</string>
 
 </resources>
