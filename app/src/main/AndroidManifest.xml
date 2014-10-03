@@ -16,6 +16,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ViewCategories"
+            android:label="@string/title_activity_view_categories" >
+        </activity>
+        <activity
+            android:name=".ViewItemList"
+            android:label="@string/title_activity_view_item_list" >
+        </activity>
+        <activity
+            android:name=".ViewItemDetails"
+            android:label="@string/title_activity_view_item_details" >
+        </activity>
+        <activity
+            android:name=".AddItemToCart"
+            android:label="@string/title_activity_add_item_to_cart" >
+        </activity>
+        <activity
+            android:name=".DisplayCart"
+            android:label="@string/title_activity_display_cart" >
+        </activity>
+        <activity
+            android:name=".Checkout"
+            android:label="@string/title_activity_checkout" >
+        </activity>
+        <activity
+            android:name=".LocateStore"
+            android:label="@string/title_activity_locate_store" >
+        </activity>
     </application>
 
 </manifest>

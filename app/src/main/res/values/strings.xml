@@ -4,5 +4,12 @@
     <string name="app_name">Team12MobileApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_view_categories">View Categories</string>
+    <string name="title_activity_view_item_list">View Item List</string>
+    <string name="title_activity_view_item_details">View Item Details</string>
+    <string name="title_activity_add_item_to_cart">Add To Cart</string>
+    <string name="title_activity_display_cart">Display Cart</string>
+    <string name="title_activity_checkout">Checkout</string>
+    <string name="title_activity_locate_store">Store Locator</string>
 
 </resources>
